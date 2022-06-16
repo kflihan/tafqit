@@ -5,7 +5,7 @@ library tafqit;
 
 //export 'src/tafqit_base.dart';
 
-// TODO: Export any libraries intended for clients of this package.
+// TODO: -- Export any libraries intended for clients of this package.
 
 /// Support for doing something awesome.
 /*
