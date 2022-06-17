@@ -1,20 +1,100 @@
 import 'package:flutter/material.dart';
+import 'package:tafqit/tafqit.dart';
 
-/// Displays detailed information about a tafqitItem.
-class TafqitItemDetailsView2 extends StatelessWidget {
-  const TafqitItemDetailsView2({Key? key}) : super(key: key);
+class TafqitItemDetailsView_2 extends StatelessWidget {
+  const TafqitItemDetailsView_2({Key? key}) : super(key: key);
 
   static const routeName = '/tafqit_item_2';
 
   @override
   Widget build(BuildContext context) {
+    return const MyHomePage();
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+  var tafqit = Tafqit();
+  var pressUnit = {
+    'unit': 'كبسة',
+    'unitPlural': 'كبسات',
+    'unitGender': TafqitUnitGender.feminine
+  };
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Item Details 22'),
+        title: const Text('مثال تفقيط عدد النقرات لزيادة العداد: '),
       ),
-      body: const Center(
-        child: Text('More Information Here 22'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Directionality(
+              textDirection: TextDirection.ltr,
+              child: Text(
+                'You have pushed the button this many times: $_counter ',
+              ),
+            ),
+            Directionality(
+              textDirection: TextDirection.ltr,
+              child: Text("""
+
+                var tafqit = Tafqit();
+
+                tafqit.tafqitNumberWithParts(
+                      listOfNumberAndParts: [$_counter],
+                      tafqitUnitCode: TafqitUnitCode.none,
+                      justWord: 'عدد عدد النقرات على الزر هي فقط')"""),
+            ),
+            Text(
+              ' ${tafqit.tafqitNumberWithParts(
+                listOfNumberAndParts: [_counter],
+                tafqitUnitCode: TafqitUnitCode.none,
+                justWord: 'عدد عدد النقرات على الزر هي فقط',
+              )}',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            Directionality(
+              textDirection: TextDirection.ltr,
+              child: Text("""
+
+                var tafqit = Tafqit();
+
+                tafqit.tafqitNumberWithParts(
+                listOfNumberAndParts: [$_counter],
+                tafqitUnitCode: TafqitUnitCode.once)
+              )"""),
+            ),
+            Text(
+              '  ${tafqit.tafqitNumberWithParts(
+                listOfNumberAndParts: [_counter],
+                tafqitUnitCode: TafqitUnitCode.once,
+              )}',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+          ],
+        ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

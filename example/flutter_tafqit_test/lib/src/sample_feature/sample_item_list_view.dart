@@ -7,9 +7,10 @@ class TafqitSampleItemListView extends StatelessWidget {
   const TafqitSampleItemListView({
     Key? key,
     this.items = const [
-      TafqitSampleItem(1),
-      TafqitSampleItem(2),
-      TafqitSampleItem(3)
+      TafqitSampleItem(1, 'مثال تفقيط عدد النقرات على زر زيادة عداد '),
+      TafqitSampleItem(2, 'مثال تفقيط العملات المعرفة سابقا بمكتبة التفقيط '),
+      TafqitSampleItem(3,
+          'مثال تفقيط الزمن، المسافات، الاوزان، المعرفة سابقا بمكتبة التفقيط')
     ],
   }) : super(key: key);
 
@@ -39,7 +40,7 @@ class TafqitSampleItemListView extends StatelessWidget {
           final item = items[index];
 
           return ListTile(
-              title: Text('TafqitSampleItem ${item.id}'),
+              title: Text(item.title),
               leading: const CircleAvatar(
                 foregroundImage: AssetImage('assets/images/flutter_logo.png'),
               ),
