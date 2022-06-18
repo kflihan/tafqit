@@ -51,14 +51,14 @@ class MyApp extends StatelessWidget {
                   case SettingsView.routeName:
                     return SettingsView(controller: settingsController);
 
-                  case TafqitItemDetailsView_1.routeName:
-                    return const TafqitItemDetailsView_1();
+                  case TafqitItemDetailsView1.routeName:
+                    return const TafqitItemDetailsView1();
 
-                  case TafqitItemDetailsView_2.routeName:
-                    return const TafqitItemDetailsView_2();
+                  case TafqitItemDetailsView2.routeName:
+                    return const TafqitItemDetailsView2();
 
-                  case TafqitItemDetailsView_3.routeName:
-                    return const TafqitItemDetailsView_3();
+                  case TafqitItemDetailsView3.routeName:
+                    return const TafqitItemDetailsView3();
 
                   case TafqitSampleItemListView.routeName:
                   default:

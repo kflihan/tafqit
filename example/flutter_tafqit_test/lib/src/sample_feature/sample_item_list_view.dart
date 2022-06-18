@@ -48,7 +48,7 @@ class TafqitSampleItemListView extends StatelessWidget {
                 Navigator.restorablePushNamed(
                   context,
                   //   TafqitSampleItemDetailsView.routeName,
-                  '/tafqit_item_${index + 1}',
+                  '/tafqit_item${index + 1}',
                 );
               });
         },

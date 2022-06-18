@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tafqit/tafqit.dart';
 
-class TafqitItemDetailsView_2 extends StatelessWidget {
-  const TafqitItemDetailsView_2({Key? key}) : super(key: key);
+class TafqitItemDetailsView2 extends StatelessWidget {
+  const TafqitItemDetailsView2({Key? key}) : super(key: key);
 
-  static const routeName = '/tafqit_item_2';
+  static const routeName = '/tafqit_item2';
 
   @override
   Widget build(BuildContext context) {

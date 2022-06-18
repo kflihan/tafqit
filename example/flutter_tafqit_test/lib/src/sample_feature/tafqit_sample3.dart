@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tafqit/tafqit.dart';
 
-class TafqitItemDetailsView_3 extends StatelessWidget {
-  const TafqitItemDetailsView_3({Key? key}) : super(key: key);
+class TafqitItemDetailsView3 extends StatelessWidget {
+  const TafqitItemDetailsView3({Key? key}) : super(key: key);
 
-  static const routeName = '/tafqit_item_3';
+  static const routeName = '/tafqit_item3';
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +32,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounterSec() {
     setState(() {
-      _counterSec == 59 ? _counterSec = 0 : _counterSec++;
+      _counterSec = _counterSec >= 59 ? 0 : _counterSec + 1;
     });
   }
 
   void _incrementCounterMin() {
     setState(() {
-      _counterMin == 59 ? _counterSec = 0 : _counterMin++;
+      _counterMin = _counterMin >= 59 ? 0 : _counterMin + 1;
     });
   }
 
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Directionality(
               textDirection: TextDirection.ltr,
               child: Text(
-                '  $_counterHour : $_counterMin : $_counterSec ',
+                ' $_counterHour H  : $_counterMin Mi : $_counterSec Sec ',
               ),
             ),
             Directionality(
