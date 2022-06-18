@@ -31,7 +31,7 @@ void main() {
     'comprehensiveUnit': 'تايلندي',
     'unit': 'بات',
     'unitPlural': 'باتات',
-    'unitMaxValue': 100,
+    'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.masculine,
   };
   var batPennyUnit = {

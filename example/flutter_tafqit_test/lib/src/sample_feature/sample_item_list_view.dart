@@ -23,7 +23,7 @@ class TafqitSampleItemListView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-            'أختر من القائمة احد الامثلة التوضيحية لاستخدام مكتبة التفقيط باللغة العربية:'),
+            'أختر من القائمة احد الامثلة التوضيحية لاستخدام مكتبة التفقيط  باللغة العربية:'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -46,10 +46,10 @@ class TafqitSampleItemListView extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.restorablePushNamed(
-                  context,
-                  //   TafqitSampleItemDetailsView.routeName,
-                  '/tafqit_item${index + 1}',
-                );
+                    context,
+                    //   TafqitSampleItemDetailsView.routeName,
+                    '/tafqit_item${index + 1}',
+                    arguments: item.title);
               });
         },
       ),

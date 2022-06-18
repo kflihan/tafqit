@@ -1,28 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:tafqit/tafqit.dart';
 
-class TafqitItemDetailsView3 extends StatelessWidget {
+class TafqitItemDetailsView3 extends StatefulWidget {
   const TafqitItemDetailsView3({Key? key}) : super(key: key);
 
   static const routeName = '/tafqit_item3';
-
+  // static String title = '';
   @override
-  Widget build(BuildContext context) {
-    return const MyHomePage();
-  }
+  State<TafqitItemDetailsView3> createState() => _TafqitItemDetailsView3State();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _TafqitItemDetailsView3State extends State<TafqitItemDetailsView3> {
   int _counterSec = 0;
   int _counterHour = 0;
   int _counterMin = 0;
+  // late String title;
   var tafqit = Tafqit();
   var pressUnit = {
     'unit': 'كبسة',
@@ -50,9 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final argsTitle = ModalRoute.of(context)!.settings.arguments;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('مثال تفقيط عدد النقرات لزيادة العداد: '),
+        title: Text('$argsTitle'),
       ),
       body: Center(
         child: Column(

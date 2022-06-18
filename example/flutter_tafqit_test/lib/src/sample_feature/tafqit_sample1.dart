@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:tafqit/tafqit.dart';
 
-class TafqitItemDetailsView1 extends StatelessWidget {
+import '../utility/utilty.dart';
+
+class TafqitItemDetailsView1 extends StatefulWidget {
   const TafqitItemDetailsView1({Key? key}) : super(key: key);
 
   static const routeName = '/tafqit_item1';
 
   @override
-  Widget build(BuildContext context) {
-    return const MyHomePage();
-  }
+  State<TafqitItemDetailsView1> createState() => _TafqitItemDetailsView1State();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _TafqitItemDetailsView1State extends State<TafqitItemDetailsView1> {
+  num _counter = RandomNum.ranodmNum();
   var tafqit = Tafqit();
   var pressUnit = {
-    'unit': 'كبسة',
-    'unitPlural': 'كبسات',
+    'unit': 'ضغطة',
+    'unitPlural': 'ضغطات',
     'unitGender': TafqitUnitGender.feminine
   };
+
+  void _randomCounter() {
+    setState(() {
+      _counter = RandomNum.nextInter();
+    });
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -36,11 +35,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final argsTitle = ModalRoute.of(context)!.settings.arguments;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('مثال تفقيط عدد النقرات لزيادة العداد: '),
+        title: Text('$argsTitle'),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -52,33 +53,18 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Directionality(
               textDirection: TextDirection.ltr,
-              child: Text("""
-
-                var tafqit = Tafqit();
-
-                tafqit.tafqitNumberWithParts(
-                      listOfNumberAndParts: [$_counter],
-                      tafqitUnitCode: TafqitUnitCode.none,
-                      justWord: 'عدد عدد النقرات على الزر هي فقط')"""),
-            ),
-            Text(
-              ' ${tafqit.tafqitNumberWithParts(
-                listOfNumberAndParts: [_counter],
-                tafqitUnitCode: TafqitUnitCode.none,
-                justWord: 'عدد عدد النقرات على الزر هي فقط',
-              )}',
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            Directionality(
-              textDirection: TextDirection.ltr,
-              child: Text("""
+              child: Text(""" -----------------------
+              يمكن استخدام الوحدات المعرفة سابقاً في مكتبة التفقيط كوحدة عد للرقم،
+              مثال استخدام الوحدة  "مرّة:"
+              (TafqitUnitCode.once)
 
                 var tafqit = Tafqit();
 
                 tafqit.tafqitNumberWithParts(
                 listOfNumberAndParts: [$_counter],
                 tafqitUnitCode: TafqitUnitCode.once)
-              )"""),
+
+              )""", style: const TextStyle(color: Color(0xFF15A35C))),
             ),
             Text(
               '  ${tafqit.tafqitNumberWithParts(
@@ -87,13 +73,50 @@ class _MyHomePageState extends State<MyHomePage> {
               )}',
               style: Theme.of(context).textTheme.headline6,
             ),
+            const Directionality(
+              textDirection: TextDirection.ltr,
+              child: Text(
+                "----------------- ",
+              ),
+            ),
+            Directionality(
+              textDirection: TextDirection.ltr,
+              child: Text("""
+              يمكن تعريف وحدة عد خاصة حسب الحاجة، كالمثال التالي، 
+              تم تعريف وحدة عد  كبسة او ضغطة او نقرة    أو ما توده
+              واستخدمها مع مكتبة التفقيط كوحدة عد
+              var tafqit = Tafqit();
+              var pressUnit = {
+              'unit': 'ضغطة',
+              'unitPlural': 'ضغطات',
+              'unitGender': TafqitUnitGender.feminine
+              };
+              String taf = tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
+              {$_counter: pressUnit}
+              ])""", style: const TextStyle(color: Color(0xFF15A35C))),
+            ),
+            Text(
+              ' ${tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
+                    {_counter: pressUnit}
+                  ])}',
+              style: Theme.of(context).textTheme.headline6,
+            ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        children: [
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: _randomCounter,
+            tooltip: 'Random Nmber',
+            child: const Icon(Icons.reset_tv),
+          ),
+        ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
