@@ -17,7 +17,7 @@ class Tafqit {
       required TafqitUnitCode tafqitUnitCode,
       String justWord = 'فقط',
       String noOtherWord = 'لاغير',
-      bool tryTafqit = false}) {
+      bool tryTafqit = true}) {
     ///----
     List? splitedUnitValue;
     // List<Map> listValuesToTafqit = [];
@@ -26,6 +26,7 @@ class Tafqit {
     TafqitUnit currentUnit;
     TafqitUnitCode currentUnitCode = tafqitUnitCode;
     bool mainUnitFlag = true;
+    bool allWasZeroFlag = true;
     String tafResult = '';
     int listLenght = listOfNumberAndParts.length;
     //num previousValueToRound = 0;
@@ -64,7 +65,7 @@ class Tafqit {
       // currentUnitValue = splitedUnitValue[1];
 
       if ((splitedUnitValue[1] != 0) ||
-          (splitedUnitValue[1] == 0 && listLenght == 1)) {
+          ((i == listLenght - 1) && allWasZeroFlag)) {
         tafResult = tafResult +
             andWord +
             (_getTafqit(
@@ -77,6 +78,7 @@ class Tafqit {
                 '');
         andWord = ' و ';
         mainUnitFlag = false;
+        allWasZeroFlag = false;
       }
       currentUnitCode = currentUnit.partialUnitCode;
     }
@@ -95,7 +97,7 @@ class Tafqit {
       {required List<Map<num, Map<String, dynamic>?>> listOfNumberAndParts,
       String justWord = 'فقط',
       String noOtherWord = 'لاغير',
-      bool tryTafqit = false}) {
+      bool tryTafqit = true}) {
     ///----
     List? splitedUnitValue;
     // List<Map> listValuesToTafqit = [];
@@ -104,6 +106,8 @@ class Tafqit {
     TafqitUnit currentUnit;
     // TafqitUnitCode currentUnitCode = tafqitUnitCode;
     bool mainUnitFlag = true;
+    bool allWasZeroFlag = true;
+
     String tafResult = '';
     int listLenght = listOfNumberAndParts.length;
     for (int i = 0; i < listLenght; i++) {
@@ -141,7 +145,7 @@ class Tafqit {
       // currentUnitValue = splitedUnitValue[1];
 
       if ((splitedUnitValue[1] != 0) ||
-          (splitedUnitValue[1] == 0 && listLenght == 1)) {
+          ((i == listLenght - 1) && allWasZeroFlag)) {
         tafResult = tafResult +
             andWord +
             (_getTafqit(
@@ -154,6 +158,7 @@ class Tafqit {
                 '');
         andWord = ' و ';
         mainUnitFlag = false;
+        allWasZeroFlag = false;
       }
     }
     tafResult = '$justWord $tafResult $noOtherWord'

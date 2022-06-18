@@ -168,4 +168,12 @@ void main() {
 
   print(tafqit.tafqitNumberWithParts(
       listOfNumberAndParts: [0], tafqitUnitCode: TafqitUnitCode.kiloMetre2));
+  print(tafqit.tafqitNumberWithParts(
+      listOfNumberAndParts: [0], tafqitUnitCode: TafqitUnitCode.kiloMetre2));
+  print(tafqit.tafqitNumberWithParts(
+      listOfNumberAndParts: [0, 0, 0],
+      tafqitUnitCode: TafqitUnitCode.kiloMetre2));
+  print(tafqit.tafqitNumberWithParts(
+      listOfNumberAndParts: [0, 0, 2],
+      tafqitUnitCode: TafqitUnitCode.kiloMetre2));
 }
