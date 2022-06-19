@@ -8,9 +8,10 @@ class TafqitSampleItemListView extends StatelessWidget {
     Key? key,
     this.items = const [
       TafqitSampleItem(1, 'مثال تفقيط عدد النقرات على زر زيادة عداد '),
-      TafqitSampleItem(2, 'مثال تفقيط العملات المعرفة سابقا بمكتبة التفقيط '),
-      TafqitSampleItem(3,
-          'مثال تفقيط الزمن، المسافات، الاوزان، المعرفة سابقا بمكتبة التفقيط')
+      TafqitSampleItem(2, 'مثال تفقيط العملات'),
+      TafqitSampleItem(3, 'مثال تفقيط الزمن'),
+      TafqitSampleItem(4, 'مثال تفقيط المسافات'),
+      TafqitSampleItem(5, 'مثال تفقيط الاوزان')
     ],
   }) : super(key: key);
 

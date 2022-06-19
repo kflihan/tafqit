@@ -91,14 +91,19 @@ class _TafqitItemDetailsView1State extends State<TafqitItemDetailsView1> {
               'unitPlural': 'ضغطات',
               'unitGender': TafqitUnitGender.feminine
               };
-              String taf = tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
-              {$_counter: pressUnit}
-              ])""", style: const TextStyle(color: Color(0xFF15A35C))),
+              String taf = tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: 
+                      [{$_counter: pressUnit}],
+                      justWord: 'قمت بالضغط على الزر  فقط', noOtherWord: 'لاغير', )""",
+                  style: const TextStyle(color: Color(0xFF15A35C))),
             ),
             Text(
-              ' ${tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
-                    {_counter: pressUnit}
-                  ])}',
+              ' ${tafqit.tafqitByUserDefinedUnit(
+                listOfNumberAndParts: [
+                  {_counter: pressUnit}
+                ],
+                justWord: 'قمت بالضغط على الزر  فقط',
+                noOtherWord: 'لاغير',
+              )}',
               style: Theme.of(context).textTheme.headline6,
             ),
           ],

@@ -6,6 +6,8 @@ import 'sample_feature/sample_item_list_view.dart';
 import 'sample_feature/tafqit_sample1.dart';
 import 'sample_feature/tafqit_sample2.dart';
 import 'sample_feature/tafqit_sample3.dart';
+import 'sample_feature/tafqit_sample4.dart';
+import 'sample_feature/tafqit_sample5.dart';
 import 'settings/settings_controller.dart';
 import 'settings/settings_view.dart';
 
@@ -59,6 +61,10 @@ class MyApp extends StatelessWidget {
 
                   case TafqitItemDetailsView3.routeName:
                     return const TafqitItemDetailsView3();
+                  case TafqitItemDetailsView4.routeName:
+                    return const TafqitItemDetailsView4();
+                  case TafqitItemDetailsView5.routeName:
+                    return const TafqitItemDetailsView5();
 
                   case TafqitSampleItemListView.routeName:
                   default:

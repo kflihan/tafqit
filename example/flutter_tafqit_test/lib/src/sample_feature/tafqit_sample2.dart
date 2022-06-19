@@ -52,20 +52,20 @@ class _TafqitItemDetailsView2State extends State<TafqitItemDetailsView2> {
             Directionality(
               textDirection: TextDirection.rtl,
               child: Text(
-                ' {$_cents}.{$_amount} ',
+                ' amount: $_amount.$_cents  ',
               ),
             ),
             Directionality(
               textDirection: TextDirection.ltr,
               child: Text(
                   """  يمكن استخدام الوحدات المعرفة سابقاً في مكتبة التفقيط كوحدة  تفقيط الريال السعودي، 
-                TafqitUnitCode.saudiArabianRiyal
-                --------------------
-                var tafqit = Tafqit();
-                String taf = tafqit.tafqitNumberWithParts(
-                listOfNumberAndParts: [$_amount,$_cents],
-                tafqitUnitCode: TafqitUnitCode.saudiArabianRiyal)
-              )""",
+                      TafqitUnitCode.saudiArabianRiyal
+                      --------------------
+                      var tafqit = Tafqit();
+                      String taf = tafqit.tafqitNumberWithParts(
+                      listOfNumberAndParts: [$_amount,$_cents],
+                      tafqitUnitCode: TafqitUnitCode.saudiArabianRiyal)
+                      )""",
                   style: const TextStyle(color: Color(0xFF15A35C))),
             ),
             Text(
@@ -75,26 +75,21 @@ class _TafqitItemDetailsView2State extends State<TafqitItemDetailsView2> {
                   ], tafqitUnitCode: TafqitUnitCode.saudiArabianRiyal)}',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
-            const Directionality(
-              textDirection: TextDirection.ltr,
-              child: Text(
-                "----------------- ",
-              ),
-            ),
             Directionality(
               textDirection: TextDirection.ltr,
-              child: Text("""
-يمكن تعريف وحدة عد خاصة بدولة غير متضمنة في مكتبة التفقيط، حسب الحاجة، كالمثال التالي، تم تعريف وحدة عد  للعملة التايلندية  وهي البات تايلدندي
-ويعادل  البات مئة ساتانغ
-  var batUnit = {     'comprehensiveUnit': 'تايلندي', 'unit': 'بات', 'unitPlural': 'باتات',
-    'unitGender': TafqitUnitGender.masculine };
-  var sattangUnit = {    'comprehensiveUnit': 'تايلندي', 'unit': 'ساتانغ', 'unitPlural': 'ساتانغات',
-    'unitMaxValue': 100,
-    'unitGender': TafqitUnitGender.masculine };
-  String taf = (tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
-    {$_amount: batUnit},
-    {$_cents : sattangUnit}
-  ])); """, style: const TextStyle(color: Color(0xFF15A35C))),
+              child: Text(
+                  """يمكن تعريف وحدة عد خاصة بدولة غير متضمنة في مكتبة التفقيط، حسب الحاجة، كالمثال التالي:
+                   تم تعريف وحدة عد  للعملة التايلندية  وهي البات تايلدندي
+                      ويعادل  البات مئة ساتانغ
+                      var batUnit = {'comprehensiveUnit': 'تايلندي', 'unit': 'بات', 'unitPlural': 'باتات',
+                      'unitGender': TafqitUnitGender.masculine };
+                      var sattangUnit = {'comprehensiveUnit': 'تايلندي', 'unit': 'ساتانغ', 'unitPlural': 'ساتانغات',
+                      'unitMaxValue': 100,
+                      'unitGender': TafqitUnitGender.masculine };
+                      String taf = (tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts:
+                      [{$_amount: batUnit},
+                      {$_cents : sattangUnit}])); """,
+                  style: const TextStyle(color: Color(0xFF15A35C))),
             ),
             Text(
               ' ${tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
