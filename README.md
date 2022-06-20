@@ -125,14 +125,14 @@ And the  definiton of the subunit  : Halalah!
   },
 
 
-Some of the units's Gender is neutral, such as the definition of an percentage:
+Some of the units's Gender is neutral, such as the definition of the percentage:
 
 
   {
     'unitCode': TafqitUnitCode.percent,
-    
+
     'comprehensiveUnit': 'بالمئة', // for neutral units we used comprehensiveUnit as unit name and Plural form
-    
+
     'unit': '',
     'unitPlural': '',
     'unitMaxValue': 0,
@@ -183,7 +183,7 @@ void main() {
 
   // Define a  Thai baht  UNIT :
   
-  // بات تايلدندي   =  ساتانغ 100
+  // بات تايلندي   =  ساتانغ 100
 
   var batUnit = {
 
