@@ -67,7 +67,8 @@ For example:
 
 Counting unit for the Saudi Riyal, and its subunit  Halalah! (which is already predefined inside package)
 
-//  Saudi Riyal Unit 
+//  Saudi Riyal Unit
+
 {
     'unitCode': TafqitUnitCode.saudiRiyal,  //unique Code.
 
@@ -91,6 +92,7 @@ Counting unit for the Saudi Riyal, and its subunit  Halalah! (which is already p
 
 And the  definiton of the subunit  : Halalah!
 
+
   {
     'unitCode': TafqitUnitCode.saudiRiyalHalala,
 
@@ -109,7 +111,9 @@ And the  definiton of the subunit  : Halalah!
   },
 
 
-Some of the units do not have a subunit, such as the definition of an Ounce:
+  Some of the units do not have a subunit, such as the definition of an Ounce:
+
+
 
 { // here we immited unused fields, will be filled by default values.
     'unitCode': TafqitUnitCode.ounce,
@@ -121,6 +125,7 @@ Some of the units do not have a subunit, such as the definition of an Ounce:
 
 
 Some of the units's Gender is neutral, such as the definition of an percentage:
+
 
   {
     'unitCode': TafqitUnitCode.percent,
