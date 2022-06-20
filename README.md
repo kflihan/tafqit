@@ -1,5 +1,13 @@
 Tafqit a  Dart/Flutter  package  to convert a number to its text representation in Arabic words.
 
+samples:
+
+* 2.62   Saudi Riyal will be in arabic words :  
+       'فقط ريالان سعوديان واثنتان وستون هللةً لاغير'
+
+* 23:2:59  time counter  will be in arabic words :   
+        'فقط ثلاث وعشرون ساعةً ودقيقتان وتسع وخمسون ثانيةً لاغير'
+
 Tafqit is a package for converting Arabic numerals into their equivalent in words, taking into account the masculine and feminine ones.
 Simply the packag's goal is to ensure the accuracy of converting numbers into words according to the correct Arabic rules.
 
@@ -67,6 +75,8 @@ For example:
 
 Counting unit for the Saudi Riyal, and its subunit  Halalah! (which is already predefined inside package)
 
+```
+
 //  Saudi Riyal Unit
 
 {
@@ -89,9 +99,11 @@ Counting unit for the Saudi Riyal, and its subunit  Halalah! (which is already p
 
     'partialUnitCode': TafqitUnitCode.saudiRiyalHalala //The subunit Code, is the Halalah
       }
+```
 
 And the  definiton of the subunit  : Halalah!
 
+```
 
   {
 
@@ -111,9 +123,11 @@ And the  definiton of the subunit  : Halalah!
 
   },
 
+```
 
   Some of the units do not have a subunit, such as the definition of an Ounce:
 
+```
 
 
 { // here we immited unused fields, will be filled by default values.
@@ -124,9 +138,11 @@ And the  definiton of the subunit  : Halalah!
     'partialUnitCode': TafqitUnitCode.none  // ounce has no  subunits.
   },
 
+```
 
 Some of the units's Gender is neutral, such as the definition of the percentage:
 
+```
 
   {
     'unitCode': TafqitUnitCode.percent,
@@ -140,6 +156,7 @@ Some of the units's Gender is neutral, such as the definition of the percentage:
     'partialUnitCode': TafqitUnitCode.none
   },
 
+```
 
 ## Usage
 
@@ -149,7 +166,8 @@ Add dependency
         tafqit: 0.0.1  #latest version
 
 
-,,,
+```
+
 
 import 'package:tafqit/tafqit.dart';
 
@@ -270,7 +288,8 @@ void main() {
 
 
 
-,,,
+
+```
 
 
 
