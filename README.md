@@ -143,7 +143,6 @@ Some of the units's Gender is neutral, such as the definition of an percentage:
 
 ## Usage
 
-
 Add dependency
 
     dependencies:
@@ -152,9 +151,8 @@ Add dependency
 
 import 'package:tafqit/tafqit.dart';
 
-
-
 void main() {
+
   var tafqit = Tafqit();
 
 
@@ -183,6 +181,8 @@ void main() {
 
 ///  2- defaine a new Tafqit Units:
 
+  // Define a  Thai baht  UNIT :
+  
   // بات تايلدندي   =  ساتانغ 100
 
   var batUnit = {
@@ -212,10 +212,10 @@ void main() {
   };
 
 
-  print(tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
-    {3: batUnit},
-    {11: batPennyUnit}
-  ]));
+  print(tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts:
+
+  [{3: batUnit},
+    {11: batPennyUnit}]));
 
   // will print  'فقط ثلاثة باتات تايلندية واحد عشر ساتانغاً لاغير'
 
@@ -231,8 +231,9 @@ void main() {
 
       };
 
-      print(tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts:
-      [{ 234234 :  aPotunit}]));
+      print(tafqit.tafqitByUserDefinedUnit(
+        
+        listOfNumberAndParts: [{ 234234 :  aPotunit}]));
 
       // will Print  'فقط مئتان واربعة وثلاثون الفاً ومئتان واربع وثلاثون طنجرةً لاغير'
 
