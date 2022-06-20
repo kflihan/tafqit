@@ -567,6 +567,7 @@ _tafqitOnePart(  onesTensWordList, partValue: 389,  partLocation: 1, sumRestPart
     List partValue = [0, 0, 0, 0, 0, 0, 0, 0];
 
     int f = 0;
+    // ignore: unused_local_variable
     int flag = 0;
     int p;
     String tafResult = '';
@@ -578,7 +579,6 @@ _tafqitOnePart(  onesTensWordList, partValue: 389,  partLocation: 1, sumRestPart
     // print('am: $am  ${am.runtimeType}  ');
     amount = am;
     // print('am: $am  Amount: $amount');
-
     p = amount.indexOf('.');
 
     // print('Founf DOT @ $p  lenght: ${amount.length}');
