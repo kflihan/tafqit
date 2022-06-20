@@ -59,12 +59,12 @@ class _TafqitItemDetailsView2State extends State<TafqitItemDetailsView2> {
               textDirection: TextDirection.ltr,
               child: Text(
                   """  يمكن استخدام الوحدات المعرفة سابقاً في مكتبة التفقيط كوحدة  تفقيط الريال السعودي، 
-                      TafqitUnitCode.saudiArabianRiyal
+                      TafqitUnitCode.saudiRiyal
                       --------------------
                       var tafqit = Tafqit();
                       String taf = tafqit.tafqitNumberWithParts(
                       listOfNumberAndParts: [$_amount,$_cents],
-                      tafqitUnitCode: TafqitUnitCode.saudiArabianRiyal)
+                      tafqitUnitCode: TafqitUnitCode.saudiRiyal)
                       )""",
                   style: const TextStyle(color: Color(0xFF15A35C))),
             ),
@@ -72,7 +72,7 @@ class _TafqitItemDetailsView2State extends State<TafqitItemDetailsView2> {
               '${tafqit.tafqitNumberWithParts(listOfNumberAndParts: [
                     _amount,
                     _cents
-                  ], tafqitUnitCode: TafqitUnitCode.saudiArabianRiyal)}',
+                  ], tafqitUnitCode: TafqitUnitCode.saudiRiyal)}',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
             Directionality(

@@ -36,8 +36,8 @@ enum TafqitUnitCode {
   jordanianDinarqirsh('JODQ'), //100 qirsh
   jordanianDinarFulus('JODF'), //1000 fulus
 
-  saudiArabianRiyal('SAR'),
-  saudiArabianRiyalHalala('SARP'),
+  saudiRiyal('SAR'),
+  saudiRiyalHalala('SARP'),
 
   kuwaitiDinar('DK'),
   kuwaitiDinarFulus('DKF'),

@@ -93,15 +93,15 @@ List<TafqitUnit> tafqitPredefinedUnits = [
       unitGender: TafqitUnitGender.masculine,
       partialUnitCode: TafqitUnitCode.none),
   TafqitUnit(
-      unitCode: TafqitUnitCode.saudiArabianRiyal,
+      unitCode: TafqitUnitCode.saudiRiyal,
       comprehensiveUnit: 'سعودي',
       unit: 'ريال',
       unitPlural: 'ريالات',
       unitMaxValue: 0,
       unitGender: TafqitUnitGender.masculine,
-      partialUnitCode: TafqitUnitCode.saudiArabianRiyalPenny),
+      partialUnitCode: TafqitUnitCode.saudiRiyalPenny),
   TafqitUnit(
-      unitCode: TafqitUnitCode.saudiArabianRiyalPenny,
+      unitCode: TafqitUnitCode.saudiRiyalPenny,
       comprehensiveUnit: 'سعودي',
       unit: 'هللة',
       unitPlural: 'هللات',

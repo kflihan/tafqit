@@ -40,17 +40,17 @@ void main() {
         expect(
             tafqit.tafqitNumberWithParts(
                 listOfNumberAndParts: [2, 62],
-                tafqitUnitCode: TafqitUnitCode.saudiArabianRiyal),
+                tafqitUnitCode: TafqitUnitCode.saudiRiyal),
             'فقط ريالان سعوديان واثنتان وستون هللةً لاغير');
         expect(
             tafqit.tafqitNumberWithParts(
                 listOfNumberAndParts: [0, 62],
-                tafqitUnitCode: TafqitUnitCode.saudiArabianRiyal),
+                tafqitUnitCode: TafqitUnitCode.saudiRiyal),
             'فقط اثنتان وستون هللةً سعوديةً لاغير');
         expect(
             tafqit.tafqitNumberWithParts(
                 listOfNumberAndParts: [0.9, 62],
-                tafqitUnitCode: TafqitUnitCode.saudiArabianRiyal,
+                tafqitUnitCode: TafqitUnitCode.saudiRiyal,
                 tryTafqit: true),
             null);
 

@@ -21,10 +21,10 @@ void main() {
       tafqitUnitCode: TafqitUnitCode.syrianPound));
   print(tafqit.tafqitNumberWithParts(
       listOfNumberAndParts: [2, 62],
-      tafqitUnitCode: TafqitUnitCode.saudiArabianRiyal));
+      tafqitUnitCode: TafqitUnitCode.saudiRiyal));
   print(tafqit.tafqitNumberWithParts(
       listOfNumberAndParts: [0, 62],
-      tafqitUnitCode: TafqitUnitCode.saudiArabianRiyal));
+      tafqitUnitCode: TafqitUnitCode.saudiRiyal));
 
   // بات تايلدندي - ساتانغ 100
   var batUnit = {

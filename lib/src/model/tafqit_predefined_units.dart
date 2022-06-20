@@ -403,16 +403,16 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'partialUnitCode': TafqitUnitCode.none
   },
   {
-    'unitCode': TafqitUnitCode.saudiArabianRiyal,
+    'unitCode': TafqitUnitCode.saudiRiyal,
     'comprehensiveUnit': 'سعودي',
     'unit': 'ريال',
     'unitPlural': 'ريالات',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.saudiArabianRiyalHalala
+    'partialUnitCode': TafqitUnitCode.saudiRiyalHalala
   },
   {
-    'unitCode': TafqitUnitCode.saudiArabianRiyalHalala,
+    'unitCode': TafqitUnitCode.saudiRiyalHalala,
     'comprehensiveUnit': 'سعودي',
     'unit': 'هللة',
     'unitPlural': 'هللات',
