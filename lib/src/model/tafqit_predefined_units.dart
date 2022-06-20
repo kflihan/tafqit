@@ -1,4 +1,3 @@
-import 'tafqit_unit.dart';
 import 'unit_code.dart';
 
 const List<Map<String, dynamic>> tafqitPredefinedUnits = [
