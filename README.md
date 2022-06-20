@@ -18,6 +18,7 @@ It is the process of writing numbers as text with words instead of numbers, and 
 
 
 in arabic:
+
 تفقيط مكتبة برمجية بلغة دارت هدفها تحويل الارقام إلى ما يقابلها كتابة بالكلمات، مع مراعاة التذكير والتأنيث
   وتأمين دقة تحويل الأعداد إلى كلمات حسب القواعد العربية الصحيحة
 
@@ -52,6 +53,7 @@ such as units of currencies and their countries, times units , distances units, 
 4- By Default, the library adds the words “only” and “nothing else” to the numbers after converting them into words, and the developer can replace them with other words as needed,
 
 تحتوي المكتبة على مجموعة من الميزات:
+
 1-  احتوائها على مجموعة كبيرة من الوحدات المعرفة مسبقا
 مثل وحدات خاصة بالنقود ودولها، ،  الزمن ، والمسافات، والاشياء، 
 
@@ -81,22 +83,15 @@ Counting unit for the Saudi Riyal, and its subunit  Halalah! (which is already p
 
 {
     'unitCode': TafqitUnitCode.saudiRiyal,  //unique Code.
-
-    'comprehensiveUnit': 'سعودي',          // comprehensiveUnit: country name in the case of currencies
-
-    'unit': 'ريال',                         // currency name
-
-
-    'unitPlural': 'ريالات',                  // The plural form of the unit, there is no specific rule 
-
-                                           //  in arabic to know it, so it must be defined in advance
-
-    'unitMaxValue': 0,                      // The upper limit allowed as a value of the number,
-                                           // 0 in the case of no limit, for example 60 in the case of a unit /// for counting minutes or seconds
-
+    'comprehensiveUnit': 'سعودي',   // comprehensiveUnit: country name in the case of currencies
+    'unit': 'ريال',           // currency name
+    'unitPlural': 'ريالات',     // The plural form of the unit, there is no specific rule 
+                             //  in arabic to know it, so it must be defined in advance
+    'unitMaxValue': 0,      // The upper limit allowed as a value of the number,
+                           // 0 in the case of no limit, for example 60 in the case of a unit 
+                           // for counting minutes or seconds
 
     'unitGender': TafqitUnitGender.masculine, // The riyal is masculine
-
     'partialUnitCode': TafqitUnitCode.saudiRiyalHalala //The subunit Code, is the Halalah
       }
 ```
@@ -106,21 +101,13 @@ And the  definiton of the subunit  : Halalah!
 ```
 
   {
-
     'unitCode': TafqitUnitCode.saudiRiyalHalala,
-
     'comprehensiveUnit': 'سعودي',
-
     'unit': 'هللة',
-
     'unitPlural': 'هللات',
-
     'unitMaxValue': 100,                     // Halalah is 100 parts of the Saudi riyal
-
     'unitGender': TafqitUnitGender.feminine, // The riyal is feminine
-
     'partialUnitCode': TafqitUnitCode.none   // no more subunits. its none incase you iqnore it.
-
   },
 
 ```
@@ -175,7 +162,6 @@ void main() {
 
   var tafqit = Tafqit();
 
-
 ///  1- Using  Predefine Tafqit Units:
 
   print(tafqit.tafqitNumberWithParts(
@@ -202,38 +188,25 @@ void main() {
 ///  2- defaine a new Tafqit Units:
 
   // Define a  Thai baht  UNIT :
-  
   // بات تايلندي   =  ساتانغ 100
 
   var batUnit = {
-
     'comprehensiveUnit': 'تايلندي',
-
     'unit': 'بات',
-
     'unitPlural': 'باتات',
-
      'unitGender': TafqitUnitGender.masculine,
-
   };
 
   var batPennyUnit = {
-
     'comprehensiveUnit': 'تايلندي',
-
     'unit': 'ساتانغ',
-
     'unitPlural': 'ساتانغات',
-
     'unitMaxValue': 100,
-
     'unitGender': TafqitUnitGender.masculine,
-
   };
 
 
   print(tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts:
-
   [{3: batUnit},
     {11: batPennyUnit}]));
 
@@ -242,18 +215,13 @@ void main() {
 
 
       var aPotunit = {
-
         'unit': 'طنجرة',
-
         'unitPlural': 'طناجر',
-
         'unitGender': TafqitUnitGender.feminine
-
       };
 
       print(tafqit.tafqitByUserDefinedUnit(
-        
-        listOfNumberAndParts: [{ 234234 :  aPotunit}]));
+               listOfNumberAndParts: [{ 234234 :  aPotunit}]));
 
       // will Print  'فقط مئتان واربعة وثلاثون الفاً ومئتان واربع وثلاثون طنجرةً لاغير'
 
