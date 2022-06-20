@@ -19,7 +19,7 @@ It is the process of writing numbers as text with words instead of numbers, and 
 
 in arabic:
 
-تفقيط مكتبة برمجية بلغة دارت هدفها تحويل الارقام إلى ما يقابلها كتابة بالكلمات، مع مراعاة التذكير والتأنيث
+تفقيط: هي مكتبة برمجية بلغة دارت هدفها تحويل الارقام إلى ما يقابلها كتابة بالكلمات، مع مراعاة التذكير والتأنيث
   وتأمين دقة تحويل الأعداد إلى كلمات حسب القواعد العربية الصحيحة
 
 
@@ -69,9 +69,10 @@ such as units of currencies and their countries, times units , distances units, 
 
 The library relies on units (most are predefined, also developer can add units at run time), called the Tafqit  unit, to determine  unit Code, the gender of the unit,  as masculine or feminine, neutral, and the unit also needs to know its sub-unit if any,and how many parts is the sub-unit of the main unit 
 
-
+```
 TafqitUnitCode enum containes all predefined Units.
 
+```
 
 For example:
 
@@ -106,7 +107,7 @@ And the  definiton of the subunit  : Halalah!
     'unit': 'هللة',
     'unitPlural': 'هللات',
     'unitMaxValue': 100,                     // Halalah is 100 parts of the Saudi riyal
-    'unitGender': TafqitUnitGender.feminine, // The riyal is feminine
+    'unitGender': TafqitUnitGender.feminine, // The Halala is feminine
     'partialUnitCode': TafqitUnitCode.none   // no more subunits. its none incase you iqnore it.
   },
 
@@ -115,7 +116,6 @@ And the  definiton of the subunit  : Halalah!
   Some of the units do not have a subunit, such as the definition of an Ounce:
 
 ```
-
 
 { // here we immited unused fields, will be filled by default values.
     'unitCode': TafqitUnitCode.ounce,
@@ -135,7 +135,6 @@ Some of the units's Gender is neutral, such as the definition of the percentage:
     'unitCode': TafqitUnitCode.percent,
 
     'comprehensiveUnit': 'بالمئة', // for neutral units we used comprehensiveUnit as unit name and Plural form
-
     'unit': '',
     'unitPlural': '',
     'unitMaxValue': 0,
@@ -182,7 +181,6 @@ void main() {
       tryTafqit: true));
 
   /// will print  null
-
 
 
 ///  2- defaine a new Tafqit Units:
