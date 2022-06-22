@@ -2,6 +2,9 @@ Tafqit a  Dart/Flutter  package  to convert a number to its text representation 
 
 samples:
 
+* 1574,2  Syrian Pound
+   'فقط الف وخمسمائة واربع وسبعون ليرةً سوريةً وقرشان لاغير'
+
 * 2.62   Saudi Riyal will be in arabic words :  
        'فقط ريالان سعوديان واثنتان وستون هللةً لاغير'
 
@@ -246,6 +249,19 @@ void main() {
 
         // will print:
         // 'الوقت المتوقع هو: ثلاث وعشرون ساعةً ودقيقتان وتسع وخمسون ثانيةً بدأً من ساعة الصفر'
+
+
+// تفقيط الاعداد السالبة، باضافة كلمة سالب اول التفقيط، 
+
+ print(tafqit.tafqitNumberWithParts(
+      listOfNumberAndParts: [-357, 29],
+      tafqitUnitCode: TafqitUnitCode.saudiRiyal));
+  //will print 'فقط سالب ثلاثمائة وسبعة وخمسون ريالاً سعودياً وتسع وعشرون هللةً لاغير'
+
+  print(tafqit.tafqitNumberWithParts(
+      listOfNumberAndParts: [0, -9],
+      tafqitUnitCode: TafqitUnitCode.saudiRiyal));
+  //will print 'فقط سالب تسع هللات سعودية لاغير'
 
 
 //// more examples to be added

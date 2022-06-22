@@ -8,7 +8,7 @@
             "name": "tafqit",
             "request": "launch",
             "type": "dart",
-            "program": "example/dart_tafqit_test/tafqit_example.dart"
+            "program": "example/dart_tafqit_test/example.dart"
         }
     ]
 }

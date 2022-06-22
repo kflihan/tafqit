@@ -32,6 +32,22 @@ void main() {
           'فقط صفر لاغير');
     });
 
+    test('tafqit Negative (-)Number  Test', () {
+      var tafqit = Tafqit();
+
+      expect(
+          tafqit.tafqitNumberWithParts(
+              listOfNumberAndParts: [-357, 29],
+              tafqitUnitCode: TafqitUnitCode.saudiRiyal),
+          'فقط سالب ثلاثمائة وسبعة وخمسون ريالاً سعودياً وتسع وعشرون هللةً لاغير');
+
+      expect(
+          tafqit.tafqitNumberWithParts(
+              listOfNumberAndParts: [0, -9],
+              tafqitUnitCode: TafqitUnitCode.saudiRiyal),
+          'فقط سالب تسع هللات سعودية لاغير');
+    });
+
     test(
       'tafqitNumberWithParts Test',
       () {

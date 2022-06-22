@@ -9,6 +9,7 @@ import 'package:tafqit/tafqit.dart';
 import 'model/tafqit_unit.dart';
 import 'model/utility.dart';
 
+/// TODO:  Adding negative values
 class Tafqit {
   //final List<Map<String, dynamic>> _PredefinedUnits = tafqitPredefinedUnits;
 
@@ -27,6 +28,8 @@ class Tafqit {
     TafqitUnitCode currentUnitCode = tafqitUnitCode;
     bool mainUnitFlag = true;
     bool allWasZeroFlag = true;
+    bool? negativeFlag;
+
     String tafResult = '';
     int listLenght = listOfNumberAndParts.length;
     //num previousValueToRound = 0;
@@ -79,10 +82,15 @@ class Tafqit {
         andWord = ' و ';
         mainUnitFlag = false;
         allWasZeroFlag = false;
+        negativeFlag =
+            (negativeFlag ?? ((splitedUnitValue[0] > 0 ? false : true)));
+        print(negativeFlag.toString());
       }
       currentUnitCode = currentUnit.partialUnitCode;
     }
-    tafResult = '$justWord $tafResult $noOtherWord'
+    // print(negativeFlag.toString() + ' final sign');
+    var negativeSign = (negativeFlag ?? false) == true ? 'سالب' : '';
+    tafResult = '$justWord ${(negativeSign)} $tafResult $noOtherWord'
         .replaceAll('  ', ' ')
         .replaceAll('  ', ' ')
         .replaceAll('و ', 'و');

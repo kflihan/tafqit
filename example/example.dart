@@ -6,8 +6,14 @@ void main() {
   ///  1- Using  Predefine Tafqit Units:
 
   print(tafqit.tafqitNumberWithParts(
-      listOfNumberAndParts: [2, 62],
+      listOfNumberAndParts: [-357, 29],
       tafqitUnitCode: TafqitUnitCode.saudiRiyal));
+  //will print 'فقط سالب ثلاثمائة وسبعة وخمسون ريالاً سعودياً وتسع وعشرون هللةً لاغير'
+
+  print(tafqit.tafqitNumberWithParts(
+      listOfNumberAndParts: [0, -9],
+      tafqitUnitCode: TafqitUnitCode.saudiRiyal));
+  //will print 'فقط سالب تسع هللات سعودية لاغير'
 
   /// will print    'فقط ريالان سعوديان واثنتان وستون هللةً لاغير'
   print(tafqit.tafqitNumberWithParts(
@@ -15,6 +21,14 @@ void main() {
       tafqitUnitCode: TafqitUnitCode.saudiRiyal));
 
   /// will print 'فقط اثنتان وستون هللةً سعوديةً لاغير'
+
+  print(tafqit.tafqitNumberWithParts(
+      listOfNumberAndParts: [1574, 2],
+      tafqitUnitCode: TafqitUnitCode.syrianPound));
+
+  /// will print 'فقط الف وخمسمائة واربع وسبعون ليرةً سوريةً وقرشان لاغير'
+  ///
+  ///
   print(tafqit.tafqitNumberWithParts(
       listOfNumberAndParts: [
         0.9,
