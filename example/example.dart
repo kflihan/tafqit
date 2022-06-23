@@ -60,7 +60,26 @@ void main() {
     {3: batUnit},
     {11: batPennyUnit}
   ]));
-  // will print  'فقط ثلاثة باتات تايلندية واحد عشر ساتانغاً لاغير'
+  //فقط ثلاثة باتات تايلندية واحد عشر ساتانغاً لاغير
+
+  print(tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
+    {-3: batUnit},
+    {11: batPennyUnit}
+  ]));
+  //فقط سالب ثلاثة باتات تايلندية واحد عشر ساتانغاً لاغير
+
+  print(tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
+    {3: batUnit},
+    {-11: batPennyUnit}
+  ]));
+  //فقط ثلاثة باتات تايلندية واحد عشر ساتانغاً لاغير
+
+  print(tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
+    {0: batUnit},
+    {-11: batPennyUnit}
+  ]));
+  //
+//فقط سالب احد عشر ساتانغاً تايلندياً لاغير
 
   var aPotunit = {
     'unit': 'طنجرة',

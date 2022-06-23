@@ -1,18 +1,9 @@
-//import 'dart:convert';
-//import 'dart:ffi';
-//import 'dart:typed_data';
-
-//import 'package:tafqit/tafqit.dart';
-
 import 'package:tafqit/src/model/tafqit_predefined_units.dart';
 import 'package:tafqit/tafqit.dart';
 import 'model/tafqit_unit.dart';
 import 'model/utility.dart';
 
-/// TODO:  Adding negative values
 class Tafqit {
-  //final List<Map<String, dynamic>> _PredefinedUnits = tafqitPredefinedUnits;
-
   String? tafqitNumberWithParts(
       {required List<num> listOfNumberAndParts,
       required TafqitUnitCode tafqitUnitCode,
@@ -21,8 +12,6 @@ class Tafqit {
       bool tryTafqit = true}) {
     ///----
     List? splitedUnitValue;
-    // List<Map> listValuesToTafqit = [];
-    //num currentUnitValue = 0;
     String andWord = '';
     TafqitUnit currentUnit;
     TafqitUnitCode currentUnitCode = tafqitUnitCode;
@@ -32,7 +21,6 @@ class Tafqit {
 
     String tafResult = '';
     int listLenght = listOfNumberAndParts.length;
-    //num previousValueToRound = 0;
 
     for (int i = 0; i < listLenght; i++) {
       splitedUnitValue = splitUnitValue(listOfNumberAndParts[i]);
@@ -65,7 +53,6 @@ class Tafqit {
             the pass value was: ${splitedUnitValue[1]}  ''');
         }
       }
-      // currentUnitValue = splitedUnitValue[1];
 
       if ((splitedUnitValue[1] != 0) ||
           ((i == listLenght - 1) && allWasZeroFlag)) {
@@ -84,11 +71,9 @@ class Tafqit {
         allWasZeroFlag = false;
         negativeFlag =
             (negativeFlag ?? ((splitedUnitValue[0] > 0 ? false : true)));
-        print(negativeFlag.toString());
       }
       currentUnitCode = currentUnit.partialUnitCode;
     }
-    // print(negativeFlag.toString() + ' final sign');
     var negativeSign = (negativeFlag ?? false) == true ? 'سالب' : '';
     tafResult = '$justWord ${(negativeSign)} $tafResult $noOtherWord'
         .replaceAll('  ', ' ')
@@ -108,13 +93,11 @@ class Tafqit {
       bool tryTafqit = true}) {
     ///----
     List? splitedUnitValue;
-    // List<Map> listValuesToTafqit = [];
-    //num currentUnitValue = 0;
     String andWord = '';
     TafqitUnit currentUnit;
-    // TafqitUnitCode currentUnitCode = tafqitUnitCode;
     bool mainUnitFlag = true;
     bool allWasZeroFlag = true;
+    bool? negativeFlag;
 
     String tafResult = '';
     int listLenght = listOfNumberAndParts.length;
@@ -150,7 +133,6 @@ class Tafqit {
             the pass value was: ${splitedUnitValue[1]}  ''');
         }
       }
-      // currentUnitValue = splitedUnitValue[1];
 
       if ((splitedUnitValue[1] != 0) ||
           ((i == listLenght - 1) && allWasZeroFlag)) {
@@ -167,9 +149,13 @@ class Tafqit {
         andWord = ' و ';
         mainUnitFlag = false;
         allWasZeroFlag = false;
+        negativeFlag =
+            (negativeFlag ?? ((splitedUnitValue[0] > 0 ? false : true)));
       }
     }
-    tafResult = '$justWord $tafResult $noOtherWord'
+
+    var negativeSign = (negativeFlag ?? false) == true ? 'سالب' : '';
+    tafResult = '$justWord ${(negativeSign)} $tafResult $noOtherWord'
         .replaceAll('  ', ' ')
         .replaceAll('  ', ' ')
         .replaceAll('و ', 'و');
@@ -178,27 +164,28 @@ class Tafqit {
 
 //==================
 
-//  --################################################################
-/*  example :
-                        x=584
-                3XDigits =5-8-4
-          xDigitLocation= 2-1-0
-_getTafqitWord( onesTensWordList,   xDigit =5 ,  xDigitLocation = 2 ,   TafqitUnit)
-  onesTensWordList [5 * 3 + 2 + 1] ----->  خمسمائة
-
-getTafqitWord( onesTensWordList,   xDigit =4 ,  xDigitLocation = 0 ,   TafqitUnit)
-
-onesTensWordList[4 * 3 + 0 + 1] -------> اربعة
-
-getTafqitWord( onesTensWordList,   xDigit =8 ,  xDigitLocation = 1 ,   TafqitUnit)
-onesTensWordList[8 * 3 + 1 + 1] ------>  ثمانون
-
-getTafqitWord( countedWordList,   xDigit = 1,  xDigitLocation = 0 ,   TafqitUnit)
-
-countedWordList[1 * 3 + 0 + 1] ------> ريالاً
---
-        فقط خمسمائة واربعة وثمانون ريالاً
-  */
+  ///  --################################################################
+  /// example :
+  /// x=584
+  /// 3XDigits =5-8-4
+  /// xDigitLocation= 2-1-0
+  /// _getTafqitWord( onesTensWordList,   xDigit =5 ,  xDigitLocation = 2 ,   TafqitUnit)
+  ///onesTensWordList [5 * 3 + 2 + 1] ----->  خمسمائة
+  ///
+  ///getTafqitWord( onesTensWordList,   xDigit =4 ,  xDigitLocation = 0 ,   TafqitUnit)
+  ///
+  ///onesTensWordList[4 * 3 + 0 + 1] -------> اربعة
+  ///
+  ///getTafqitWord( onesTensWordList,   xDigit =8 ,  xDigitLocation = 1 ,   TafqitUnit)
+  ///onesTensWordList[8 * 3 + 1 + 1] ------>  ثمانون
+  ///
+  ///getTafqitWord( countedWordList,   xDigit = 1,  xDigitLocation = 0 ,   TafqitUnit)
+  ///
+  ///countedWordList[1 * 3 + 0 + 1] ------> ريالاً
+  ///--
+  ///فقط خمسمائة واربعة وثمانون ريالاً
+  ///
+  ///
   String _getTafqitWord(String tafqitWordsList, var xDigit, var xDigitLocation,
       TafqitUnit tafUnit) {
     TafqitUnitGender numGender = (tafUnit.unitGender);
@@ -373,7 +360,6 @@ countedWordList[1 * 3 + 0 + 1] ------> ريالاً
       'كوادريليونان',
       'كوادريليونا'
     ];
-    // print('$tafqitWordsList[$xDigit * 3 + $xDigitLocation + 1]');
     if (tafqitWordsList == 'hndrdsThosndsWordList') {
       return (hndrdsThosndsWordList[xDigit * 3 + xDigitLocation + 1]);
     } else if (tafqitWordsList == 'onesTensWordList') {
@@ -387,28 +373,25 @@ countedWordList[1 * 3 + 0 + 1] ------> ريالاً
   }
 
   ///##########################################
-  /*  _tafqitOnePart
-example :
-    tafqitNumber = 479 576 389
-    -------------------------
-_tafqitOnePart(  hndrdsThosndsWordList, partValue: 479, partLocation: 3, sumRestPartsValue:  965,  tafUnit )
-اربعمائة وتسعة وسبعون مليوناً
-
-_tafqitOnePart(  hndrdsThosndsWordList, partValue: 576, partLocation: 2, sumRestPartsValue: 389,  tafUnit)
-خمسمائة وستة وسبعون الفاً
-
-_tafqitOnePart(  onesTensWordList, partValue: 389,  partLocation: 1, sumRestPartsValue 0,  tafUnit)
-
-ثلاثمائة وتسعة وثمانون ريالاً
-
-
-  */
+  ///  _tafqitOnePart
+  ///example :
+  ///tafqitNumber = 479 576 389
+  ///-------------------------
+  ///_tafqitOnePart(  hndrdsThosndsWordList, partValue: 479, partLocation: 3, sumRestPartsValue:  965,  tafUnit )
+  ///اربعمائة وتسعة وسبعون مليوناً
+  ///
+  ///_tafqitOnePart(  hndrdsThosndsWordList, partValue: 576, partLocation: 2, sumRestPartsValue: 389,  tafUnit)
+  ///خمسمائة وستة وسبعون الفاً
+  ///
+  ///_tafqitOnePart(  onesTensWordList, partValue: 389,  partLocation: 1, sumRestPartsValue 0,  tafUnit)
+  ///
+  ///ثلاثمائة وتسعة وثمانون ريالاً
+  ///
+  ///
+  ///
   ///--################################################################
   String _tafqitOnePart(String tafqitWordList, var partValue, var partLocation,
       var sumRestPartsValue, TafqitUnit tafUnit) {
-    //  print(
-    //    '_tafqitOnePart(  $tafqitWordList, $partValue, $partLocation, $sumRestPartsValue,  tafUnit ');
-
     int xHundred = 0;
     int xTens = 0;
 
@@ -574,22 +557,15 @@ _tafqitOnePart(  onesTensWordList, partValue: 389,  partLocation: 1, sumRestPart
 
     List partValue = [0, 0, 0, 0, 0, 0, 0, 0];
 
-    int f = 0;
-    // ignore: unused_local_variable
     int flag = 0;
     int p;
     String tafResult = '';
-
     if (am.isEmpty) {
       return ('');
     }
 
-    // print('am: $am  ${am.runtimeType}  ');
     amount = am;
-    // print('am: $am  Amount: $amount');
     p = amount.indexOf('.');
-
-    // print('Founf DOT @ $p  lenght: ${amount.length}');
 
     if ((p != -1)) {
       return (null);
@@ -620,85 +596,69 @@ _tafqitOnePart(  onesTensWordList, partValue: 389,  partLocation: 1, sumRestPart
           tafUnit);
       tafResult = tafResult + onePartTaf;
       flag = 1;
-      f = 1;
-    } else {
-      flag = 0;
     }
 
     if ((partValue[6] > 0)) {
       onePartTaf = _tafqitOnePart('hndrdsThosndsWordList', partValue[6], 5,
           partValue[5] + partValue[4] + partValue[3] + partValue[2], tafUnit);
-      if ((f == 1)) {
+      if ((flag == 1)) {
         tafResult = '$tafResult و';
       }
       tafResult = tafResult + onePartTaf;
       flag = 1;
-      f = 1;
-    } else {
-      flag = 0;
     }
 
     if ((partValue[5] > 0)) {
       onePartTaf = _tafqitOnePart('hndrdsThosndsWordList', partValue[5], 4,
           partValue[4] + partValue[3] + partValue[2], tafUnit);
 
-      if ((f == 1)) {
+      if ((flag == 1)) {
         tafResult = '$tafResult و';
       }
 
       tafResult = tafResult + onePartTaf;
       flag = 1;
-      f = 1;
-    } else {
-      flag = 0;
     }
 
     if ((partValue[4] > 0)) {
       onePartTaf = _tafqitOnePart('hndrdsThosndsWordList', partValue[4], 3,
           partValue[3] + partValue[2], tafUnit);
 
-      if ((f == 1)) {
+      if ((flag == 1)) {
         tafResult = '$tafResult و';
       }
 
       tafResult = tafResult + onePartTaf;
       flag = 1;
-      f = 1;
-    } else {
-      flag = 0;
     }
 
     if ((partValue[3] > 0)) {
       onePartTaf = _tafqitOnePart(
           'hndrdsThosndsWordList', partValue[3], 2, partValue[2], tafUnit);
 
-      if ((f == 1)) {
+      if ((flag == 1)) {
         tafResult = '$tafResult و';
       }
 
       tafResult = tafResult + onePartTaf;
       flag = 1;
-      f = 1;
-    } else {
-      flag = 0;
     }
 
     if ((partValue[2] > 0)) {
       onePartTaf =
           _tafqitOnePart('onesTensWordList', partValue[2], 1, 0, tafUnit);
 
-      if ((f == 1)) {
+      if ((flag == 1)) {
         tafResult = '$tafResult و';
       }
 
       tafResult = tafResult + onePartTaf;
       flag = 1;
-      f = 1;
-    } else if (f == 1) {
+    } else if (flag == 1) {
       tafResult = '$tafResult  ${tafUnit.unit}';
     }
 
-    if (f == 1 && tafUnit.comprehensiveUnit.isNotEmpty && isMainUnit) {
+    if (flag == 1 && tafUnit.comprehensiveUnit.isNotEmpty && isMainUnit) {
       tafResult = _getcomprehensiveUnitUnit(partValue[2], tafResult,
           tafUnit.comprehensiveUnit, tafUnit.unitGender);
     }
