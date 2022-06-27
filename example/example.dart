@@ -3,6 +3,23 @@ import 'package:tafqit/tafqit.dart';
 void main() {
   var tafqit = Tafqit();
 
+// TODO  add part unit from unit
+// فقط تسع وخمسون ثانيةً وست ميلي ثواني واربعة أجزاء لاغير
+// TODO فقط تسع وخمسون ثانيةً وست ميلي ثواني واربعة أجزاء -من الميلي ثانية- لاغير
+
+  print(tafqit.tafqitNumberWithParts(
+      listOfNumberAndParts: [0, 0, 59, 6, 4],
+      tafqitUnitCode: TafqitUnitCode.hour));
+
+  print(tafqit.tafqitNumberWithParts(
+      listOfNumberAndParts: [0, 444],
+      tafqitUnitCode: TafqitUnitCode.metrePerHour));
+
+  print(tafqit.tafqitNumberWithParts(
+      listOfNumberAndParts: [59, 6, 4],
+      tafqitUnitCode: TafqitUnitCode.kiloMetrePerHour));
+
+/*
   ///  1- Using  Predefine Tafqit Units:
 
   print(tafqit.tafqitNumberWithParts(
@@ -63,23 +80,10 @@ void main() {
   //فقط ثلاثة باتات تايلندية واحد عشر ساتانغاً لاغير
 
   print(tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
-    {-3: batUnit},
-    {11: batPennyUnit}
-  ]));
-  //فقط سالب ثلاثة باتات تايلندية واحد عشر ساتانغاً لاغير
-
-  print(tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
     {3: batUnit},
     {-11: batPennyUnit}
   ]));
   //فقط ثلاثة باتات تايلندية واحد عشر ساتانغاً لاغير
-
-  print(tafqit.tafqitByUserDefinedUnit(listOfNumberAndParts: [
-    {0: batUnit},
-    {-11: batPennyUnit}
-  ]));
-  //
-//فقط سالب احد عشر ساتانغاً تايلندياً لاغير
 
   var aPotunit = {
     'unit': 'طنجرة',
@@ -107,6 +111,5 @@ void main() {
   ));
   // will print:
   // 'الوقت المتوقع هو: ثلاث وعشرون ساعةً ودقيقتان وتسع وخمسون ثانيةً بدأً من ساعة الصفر'
-
-//// more examples to be added
+*/ // more examples to be added
 }

@@ -64,7 +64,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'غرامات',
     'unitMaxValue': 1000,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
   {
     'unitCode': TafqitUnitCode.ounce,
@@ -73,7 +73,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'أونصات',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.feminine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 
   //====== Units of times
@@ -111,7 +111,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'ميلي ثواني',
     'unitMaxValue': 60,
     'unitGender': TafqitUnitGender.feminine,
-    'partialUnitCode': TafqitUnitCode.none,
+    'partialUnitCode': TafqitUnitCode.undefinedPart,
   },
   //=============== Units of  distances and lengths
   {
@@ -169,7 +169,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'ميليات',
     'unitMaxValue': 10,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
   {
     'unitCode': TafqitUnitCode.yard,
@@ -178,7 +178,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'ياردات',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.feminine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 
   {
@@ -188,7 +188,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'أميال',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.feminine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 
   {
@@ -198,7 +198,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'أقدام',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 
   {
@@ -208,7 +208,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'إنشات',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 
   {
@@ -218,7 +218,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'درجات',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.feminine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 
   {
@@ -228,7 +228,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'درجات فهرنهايت',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
   {
     'unitCode': TafqitUnitCode.centimeter,
@@ -246,7 +246,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'ميليات',
     'unitMaxValue': 10,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
   // ===== Units of currencies
   {
@@ -774,7 +774,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': '',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.neutral,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 
   ///=======
@@ -787,7 +787,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'حاويات',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
   {
     'unitCode': TafqitUnitCode.package,
@@ -796,7 +796,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'طرود',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 
   {
@@ -816,7 +816,7 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'صناديق',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 
   {
@@ -836,7 +836,17 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'كيلومترات في الساعة',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.metrePerHour
+  },
+
+  {
+    'unitCode': TafqitUnitCode.metrePerHour,
+    'comprehensiveUnit': '',
+    'unit': 'متر في الساعة',
+    'unitPlural': 'مترات في الساعة',
+    'unitMaxValue': 0,
+    'unitGender': TafqitUnitGender.masculine,
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 
   {
@@ -846,6 +856,6 @@ const List<Map<String, dynamic>> tafqitPredefinedUnits = [
     'unitPlural': 'أمتار في الثانية',
     'unitMaxValue': 0,
     'unitGender': TafqitUnitGender.masculine,
-    'partialUnitCode': TafqitUnitCode.none
+    'partialUnitCode': TafqitUnitCode.undefinedPart
   },
 ];

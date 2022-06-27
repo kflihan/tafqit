@@ -110,7 +110,8 @@ enum TafqitUnitCode {
   milliMeter2('MM2'),
 
   kiloMetrePerHour('KMPH'),
-  metrePerSecond('MPS'),
+  metrePerHour('MPH'),
+  metrePerSecond('MPSC'),
 
   hour('HR'),
   minute('MIN'),
