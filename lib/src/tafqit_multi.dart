@@ -14,19 +14,27 @@ class Tafqit {
     List? splitedUnitValue;
     String andWord = '';
     TafqitUnit currentUnit;
-    TafqitUnitCode currentUnitCode = tafqitUnitCode;
+    TafqitUnitCode lastCurrentUnitCode = tafqitUnitCode;
     bool mainUnitFlag = true;
     bool allWasZeroFlag = true;
     bool? negativeFlag;
 
     String tafResult = '';
     int listLenght = listOfNumberAndParts.length;
+// TODO replace  first partial last  unit with PArtUndefined unit,
+// TODO  add part unit from unit
+// فقط تسع وخمسون ثانيةً وست ميلي ثواني واربعة أجزاء لاغير
+//   فقط تسع وخمسون ثانيةً وست ميلي ثواني واربعة أجزاء -من الميلي ثانية- لاغير
+
+//  print(tafqit.tafqitNumberWithParts(
+//      listOfNumberAndParts: [0, 0, 59, 6, 4],
+//      tafqitUnitCode: TafqitUnitCode.hour));
 
     for (int i = 0; i < listLenght; i++) {
       splitedUnitValue = splitUnitValue(listOfNumberAndParts[i]);
 
       currentUnit = TafqitUnit.fromMap(tafqitPredefinedUnits.firstWhere(
-          (element) => element['unitCode'] == currentUnitCode, orElse: () {
+          (element) => element['unitCode'] == lastCurrentUnitCode, orElse: () {
         return tafqitPredefinedUnits
             .firstWhere((e) => e['unitCode'] == TafqitUnitCode.undefinedPart);
       }));
@@ -56,6 +64,8 @@ class Tafqit {
 
       if ((splitedUnitValue[1] != 0) ||
           ((i == listLenght - 1) && allWasZeroFlag)) {
+        //    print('${splitedUnitValue[1]}  ${currentUnit.unitCode}');
+
         tafResult = tafResult +
             andWord +
             (_getTafqit(
@@ -72,7 +82,7 @@ class Tafqit {
         negativeFlag =
             (negativeFlag ?? ((splitedUnitValue[0] > 0 ? false : true)));
       }
-      currentUnitCode = currentUnit.partialUnitCode;
+      lastCurrentUnitCode = currentUnit.partialUnitCode;
     }
     var negativeSign = (negativeFlag ?? false) == true ? 'سالب' : '';
     tafResult = '$justWord ${(negativeSign)} $tafResult $noOtherWord'
